@@ -3,7 +3,7 @@ name: Publish
 on:
   push:
     branches: [ main ]
-#    paths: [ Dockerfile ]
+    paths: [ Dockerfile ]
 
 jobs:
   main:
@@ -23,7 +23,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-#          context: .
           push: true
           tags: somespecialone/deta-rust-builder:latest
           # don't need the cache in such a simple case
