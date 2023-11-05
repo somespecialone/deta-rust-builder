@@ -3,12 +3,15 @@ name: Publish
 on:
   push:
     branches: [ main ]
-    paths: [ Dockerfile ]
+#    paths: [ Dockerfile ]
 
 jobs:
   main:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    environment:
+      name: docker-hub
+      url: https://hub.docker.com/r/somespecialone/deta-rust-builder
     steps:
       - uses: docker/setup-qemu-action@v3
       - uses: docker/setup-buildx-action@v3
@@ -20,7 +23,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: .
+#          context: .
           push: true
           tags: somespecialone/deta-rust-builder:latest
           # don't need the cache in such a simple case
