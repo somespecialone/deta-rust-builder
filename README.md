@@ -1,5 +1,10 @@
 # Deta Rust Builder
 
+> [!NOTE]
+> Image name is `somespecialone/deta-rust-builder`
+> 
+> [Docker link](https://hub.docker.com/r/somespecialone/deta-rust-builder)
+
 For now [Deta Space Micro](https://deta.space/docs/en/build/reference/runtime) runtime have installed `glibc 2.27`.
 
 So for Rust applications to work on it, they need to be built on similar systems `(Ubuntu 18.04 glibc 2.27)`.
